@@ -26,22 +26,22 @@ public class SubscriptionController {
     }
 
     @RequestMapping(value = "/subscription", method = RequestMethod.GET)
-    public List<Subscription> readSubscriptions() {
+    public List<Subscription> readSubscription() {
         return subService.getSubscription();
     }
 
     @RequestMapping(value = "/subscription/{subId}", method = RequestMethod.GET)
-    public Subscription readSubscriptionsById(@PathVariable(value = "subId") Long subId) {
+    public Subscription readSubscriptionById(@PathVariable(value = "subId") Long subId) {
         return subService.getSubscriptionById(subId);
     }
 
     @RequestMapping(value = "/subscription/{subId}", method = RequestMethod.PUT)
-    public Subscription readSubscriptions(@PathVariable(value = "subId") Long id, @RequestBody Subscription subDetails) {
+    public Subscription readSubscription(@PathVariable(value = "subId") Long id, @RequestBody Subscription subDetails) {
         return subService.updateSubscription(id, subDetails);
     }
 
     @RequestMapping(value = "/subscription/{subId}", method = RequestMethod.DELETE)
-    public void deleteSubscriptions(@PathVariable(value = "subId") Long id) {
+    public void deleteSubscription(@PathVariable(value = "subId") Long id) {
         subService.deleteSubscription(id);
     }
 }
